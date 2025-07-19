@@ -1,0 +1,6 @@
+@jomasexpenssdotnetApi_HostAddress = http://localhost:5281
+
+GET {{jomasexpenssdotnetApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
