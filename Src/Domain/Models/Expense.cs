@@ -1,11 +1,13 @@
 
-
 namespace jomasexpenssdotnetApi.Src.Domain.Models
 {
     public class Expense
     {
         // Id is a unique identifier for each expense
         public Guid Id { get; set; } = Guid.NewGuid();
+
+        // Title is a brief description of the expense
+        public string Title { get; set; } = string.Empty;
 
         // Description provides details about the expense
         public string Description { get; set; } = string.Empty;

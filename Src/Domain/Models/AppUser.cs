@@ -11,5 +11,7 @@ namespace jomasexpenssdotnetApi.Src.Domain.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
         public string FullName => $"{FirstName} {LastName}";
+        public ICollection<Expense> Expenses { get; set; } = new List<Expense>();
+      
         }
 }
