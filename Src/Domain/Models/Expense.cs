@@ -3,8 +3,15 @@ namespace jomasexpenssdotnetApi.Src.Domain.Models
 {
     public class Expense
     {
-        // Id is a unique identifier for each expense
-        public Guid Id { get; set; } = Guid.NewGuid();
+
+        public Expense()
+        {
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow;
+        }
+        // Id is the unique identifier for the expense
+        public Guid Id { get; set; }
 
         // Title is a brief description of the expense
         public string Title { get; set; } = string.Empty;
@@ -13,20 +20,16 @@ namespace jomasexpenssdotnetApi.Src.Domain.Models
         public string Description { get; set; } = string.Empty;
 
         // Amount represents the cost of the expense
-        public decimal Amount { get; set; }
 
-        // Date is when the expense was incurred
-        public DateTime Date { get; set; } = DateTime.UtcNow;
 
         // Category is the type of expense (e.g., Travel, Food, etc.)
         public Category Category { get; set; }
         public Guid CategoryId { get; set; }
 
         // CreatedAt is the timestamp when the expense was created
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
+        public DateTime CreatedAt { get; set; }
         // UpdatedAt is the timestamp when the expense was last updated
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; }
 
         // UserId is the identifier for the user who created the expense
         public AppUser User { get; set; }
